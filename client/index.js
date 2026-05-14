@@ -1,6 +1,9 @@
+import { io } from "https://cdn.socket.io/4.7.2/socket.io.esm.min.js";
+
 const socket = io();
-socket.on("connect", (response) => {
-  console.log("response");
+
+socket.on("connect", () => {
+  console.log("Connected using ES6 Modules:", socket.id);
 });
 
 socket.on("disconnect", (reason, details) => {

@@ -1,4 +1,4 @@
-logs
+# logs
 *.log
 npm-debug.log*
 node_modules
@@ -16,3 +16,5 @@ pids
 # Misc
 .vscode-test
 *.tsbuildinfo
+.DS_Store
+.env

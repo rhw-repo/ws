@@ -4,12 +4,13 @@
   "description": "A web socket implementation",
   "license": "ISC",
   "author": "RHW",
-  "type": "commonjs",
+  "type": "module",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "express": "^5.2.1",
     "socket.io": "^4.8.3"
   }
 }
