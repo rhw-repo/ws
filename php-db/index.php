@@ -42,9 +42,11 @@
     ],
   ];
 
-  function filterByAuthor() {}
+  function filterByAuthor()
+  {
+    return "gibberish";
+  }
 
-  return "gibberish"
   ?>
 
   <ul>
