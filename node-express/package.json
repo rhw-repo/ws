@@ -1,0 +1,19 @@
+{
+  "name": "mysql-node",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate":"node --env-file=.env ./migrate.js",
+    "dev": "node --env-file=.env ./index.js"
+  },
+  "packageManager": "pnpm@11.5.2+sha512.71c631e382066efc25625d5cf029075de07b61b37f6e27350fbd84b1bda5864c8c1967adc280776b45c30a715c0359a3be08fef42d5bb09e2b99029979692916",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mysql2": "^3.22.4"
+  }
+}

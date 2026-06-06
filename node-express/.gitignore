@@ -3,6 +3,9 @@
 .AppleDouble
 .LSOverride
 
+# VS Code
+.vscode/
+
 # Icon must end with two \r
 Icon
 
@@ -69,3 +72,20 @@ node_modules/
 .env.test.local
 .env.production.local
 .env.local
+
+# MySQL dumps
+*dump.sql
+*.backup.sql
+*.dump
+
+# Build output 
+dist/
+build/
+
+# Temp / misc.
+tmp/
+temp/
+
+### Testing ###
+coverage/
+.nyc_output/
