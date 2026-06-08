@@ -1,7 +1,8 @@
 /* Node.js has built in identifiers 
 console - use to log to console 
-global - namespace available to the entire Node process
+global - namespace available to the entire Node process, equivalent of browser window 
 process - give you access to the currently running process
+globalThis - global across all the app, points at global 
 */
 // global acts like window object in the browser
 //
