@@ -5,8 +5,8 @@ const server = http.createServer((req, res) => {
   res.setHeader("Content-Type", "text/html");
   // unneccessary to end in Express
   //res.statusCode = 404;
-  res.writeHead(500, "Content-Type", "application/json");
-  res.end(JSON.stringify({ message: "server error" }));
+  res.writeHead(200, "Content-Type", "application/json");
+  res.end(JSON.stringify({ message: "change" }));
 });
 
 server.listen(PORT, () => {
