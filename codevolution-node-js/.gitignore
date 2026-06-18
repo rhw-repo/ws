@@ -1,3 +1,6 @@
+### Notes 
+notes.txt
+
 ### Node ###
 # Logs
 logs
@@ -7,31 +10,6 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
-
-# macOS
-.DS_Store
-.DS_Store?
-.AppleDouble
-.LSOverride
-._*
-.Spotlight-V100
-.Trashes
-.AppleDB
-.AppleDesktop
-.apdisk
-Icon?
-
-# VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-*.code-workspace
-
-# Dev Containers
-.devcontainer/.env
-.devcontainer/local-*.json
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
@@ -67,6 +45,7 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+../../.pnpm-store
 
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
@@ -146,10 +125,6 @@ dist
 
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
-
-# pnpm
-.pnpm-store/
-.pnpm/
 
 # yarn v2
 .yarn/cache
