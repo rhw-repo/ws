@@ -1,0 +1,110 @@
+/*Global CSS variables */
+:root {
+  --primary: #c38fff;
+  --darker: #a086d6;
+  --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+body {
+  background-color: #010a01;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--system-ui);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary);
+}
+
+.main__input-container {
+  display: grid;
+  grid-template-rows: repeat (3, 1fr);
+  grid-template-columns: repeat (2, 1fr);
+  gap: 0.25rem 1rem;
+  margin-bottom: 1rem;
+  font-family: var(--system-ui);
+}
+
+p {
+  text-align: center;
+  margin: 0.5rem;
+  color: var(--secondary);
+}
+
+input {
+  padding: 1rem;
+  color: #004953;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.main__input__player-one {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+  border-radius: 0.5rem;
+}
+
+.main__input__player-two {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  border-radius: 0.5rem;
+}
+
+.main__button__start-game,
+.main__button__reset-game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary);
+  background-color: transparent;
+  border: 1px solid var(--primary);
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+}
+
+.main__button__start-game {
+  grid-row: 3 / 4;
+  grid-column: 1 / 2;
+}
+
+.main__button__reset-game {
+  grid-row: 3 / 4;
+  grid-column: 2 / 3;
+}
+
+.main__button__start-game:hover,
+.main__button__reset-game:hover {
+  box-shadow: 0 0 8px var(--primary);
+  font-weight: bold;
+}
+
+.main__button__start-game:active,
+.main__button__reset-game:active {
+  box-shadow: none;
+  background-color: var(--darker);
+  color: white;
+  font-weight: bold;
+}
+
+.main__board-container {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(3, 1fr);
+  border: var(--primary);
+  height: 400px;
+  width: 400px;
+  gap: 0;
+}
+
+.board-container {
+  box-sizing: border-box;
+  background-color: transparent;
+  border: 2px solid var(--primary);
+}

@@ -1,0 +1,218 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-light: oklch(98.5% 0 0);
+  --primary-dark: oklch(13% 0.028 261.692);
+  --accent-players: oklch(55.3% 0.195 38.402);
+  --accent-game-over: oklch(85.2% 0.199 91.936);
+  /*--cell-size: 6.25rem;*/
+  /* --cell-size: 12rem;*/
+  --cell-size: clamp(6.25rem, 13vw + 3.6rem, 12rem);
+  --mark-size: calc(var(--cell-size) * 0.9);
+  --text-font:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.page-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-light);
+  height: 100dvh;
+  height: 100vh;
+}
+
+.page-title {
+  font-family: var(--text-font);
+  /*margin: 3rem;*/
+  color: var(--accent-players);
+}
+
+.board {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(3, auto);
+  gap: 3px;
+  background-color: black;
+  box-shadow:
+    0px 1px 3px 1px rgba(0, 0, 0, 0.15),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--primary-light);
+}
+
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: var(--primary-light);
+}
+
+.cell.x,
+.cell.circle {
+  cursor: not-allowed;
+}
+
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after,
+.board.circle .cell:not(.x):not(.circle):hover::before,
+.board.circle .cell:not(.x):not(.circle):hover::after {
+  background-color: oklch(70.7% 0.022 261.325);
+}
+
+.cell.x::before,
+.cell.x::after {
+  background-color: oklch(48.8% 0.243 264.376);
+}
+
+.cell.circle::before,
+.cell.circle::after {
+  background-color: oklch(60.6% 0.25 292.717);
+}
+
+.cell.x::before,
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after {
+  content: "";
+  position: absolute;
+  width: calc(var(--mark-size) * 0.15);
+  height: var(--mark-size);
+}
+
+.cell.x::before,
+.board.x .cell:not(.x):not(.circle):hover::before {
+  transform: rotate(45deg);
+}
+
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::after {
+  transform: rotate(-45deg);
+}
+
+.cell.circle::before,
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::before,
+.board.circle .cell:not(.x):not(.circle):hover::after {
+  content: "";
+  position: absolute;
+  width: calc(var(--mark-size) * 0.15);
+  height: var(--mark-size);
+  border-radius: 50%;
+}
+
+.cell.circle::before,
+.board.circle .cell:not(.x):not(.circle):hover::before {
+  width: var(--mark-size);
+  height: var(--mark-size);
+}
+
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::after {
+  width: calc(var(--mark-size) * 0.7);
+  height: calc(var(--mark-size) * 0.7);
+  background-color: var(--primary-light);
+}
+
+.winning-message {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #272727;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--accent-game-over);
+  font-size: 5rem;
+  font-family: var(--text-font);
+  border: 1px solid var(--accent-game-over);
+}
+
+.player-names {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 1rem 0 4rem 0;
+  font-family: var(--text-font);
+  padding: 2rem clamp(1rem, 48vw - 8.1rem, 6rem);
+  border: 1px solid var(--accent-players);
+  border-radius: 1rem;
+  box-shadow:
+    0px 1px 3px 1px rgba(0, 0, 0, 0.15),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+}
+
+.player-names label {
+  margin-right: 1rem;
+}
+
+.player-names input {
+  line-height: 1.6rem;
+  width: 15rem;
+}
+
+.button--submit {
+  background-color: var(--accent-players);
+  color: var(--primary-light);
+  border: 1px solid var(--accent-players);
+  padding: 0.5rem 1.5rem;
+  border-radius: 1rem;
+  margin: 0 1rem;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.35);
+}
+
+.button--submit:hover {
+  background-color: var(--primary-light);
+  color: var(--accent-players);
+  border: var(--accent-players);
+}
+
+.restart-button {
+  font-size: 3rem;
+  background-color: var(--accent-game-over);
+  border: 1px solid var(--primary-dark);
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  border-radius: 1rem;
+  margin: 1rem;
+  box-shadow:
+    0px 2px 4px 1px rgba(0, 0, 0, 0.4),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.5);
+
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.1s ease;
+}
+
+.restart-button:hover {
+  background-color: var(--primary-dark);
+  color: var(--accent-game-over);
+  border-color: var(--accent-game-over);
+  box-shadow:
+    0px 4px 8px 3px rgba(0, 0, 0, 0.4),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.5);
+}
+
+.winning-message.show {
+  display: flex;
+}

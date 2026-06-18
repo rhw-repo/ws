@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Log</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/a25906fcbb.js" crossorigin="anonymous"></script>
+  <script type="module" src="/main.js"></script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-content">
+      <h1 class="title">Book Log</h1>
+      <nav>
+        <button class="nav__add-btn" id="add" aria-label="add book button"><span>
+            <i class="fa-solid fa-book-medical"></i></span></i>
+          Add book
+        </button>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="image">
+      <img src="./pexels-karolina-grabowska-4207791.png" alt="Books on a marble shelf" class="header__img" tabindex="0">
+    </div>
+
+    <dialog class="dialog" id="dialog" aria-modal="true">
+      <!--Form action attribute omitted - there is no server to send data to-->
+      <form method="dialog" class="dialog__form" id="add-book">
+        <button type="button" class="dialog__close-btn" aria-label="Close modal button">
+          <i class="fa-solid fa-circle-xmark"></i>
+        </button>
+        <label for="title" class="dialog__label-title">
+          Title:
+        </label>
+        <input type="text" name="title" class="dialog__input-title" required aria-required="true" />
+        <label for="author" class="dialog__label-author">
+          Written by:
+        </label>
+        <input type="text" name="author" class="dialog__input-author" required aria-required="true" />
+        <label for="pages" id="pages" class="dialog__label-pages">
+          No. of pages:
+        </label>
+        <input type="number" min="1" value="1" name="pages" id="pages" class="dialog__input-pages">
+
+        <div class="dialog__toggle-label" aria-label="Section to mark if the book has been read">
+          <b>Mark as read</b>
+          <br /><br />
+        </div>
+        <div class="dialog__toggle-switch">
+          <input type="checkbox" id="switch" class="dialog__checkbox" />
+          <label for="switch" class="dialog__toggle" aria-label="Toggle switch to mark if the book has been read">
+          </label>
+        </div>
+
+        <button id="submit-btn" type="submit" class="dialog__submit-btn">
+          Submit
+        </button>
+      </form>
+    </dialog>
+
+    <div class="container">
+    </div>
+
+  </main>
+  <footer class="footer">
+    <p class="footer__copyright">
+      &copy; R H Westnidge Brown, 2024
+    </p>
+    <p class="footer__credit">
+      Photo by
+      <a href="https://www.pexels.com/photo/geometric-marble-shelf-with-books-and-decorative-vase-4207791/"
+        target="_blank">
+        Karolina Kaboompics
+      </a>
+    </p>
+  </footer>
+  <script src="./main.js"></script>
+</body>
+
+</html>

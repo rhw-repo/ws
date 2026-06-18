@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="main">
+      <h1 class="main__h1-title">Tic Tac Toe</h1>
+      <!--button onclick={createPlayer}>Test button</button-->
+      <div class="main__input-container">
+        <p >Edit player 1 name:</p>
+        <input 
+        id="player-one"
+        class="main__input__player-one">
+      </input>
+        <p>Edit player 2 name:</p>
+        <input 
+        id="player-two"
+        class="main__input__player-two">
+      </input>
+        <button 
+        type="button"
+        class="main__button__start-game">
+        START GAME
+      </button>  
+      <button 
+        type="button"
+        class="main__button__reset-game">
+        RESET GAME
+      </button>
+      </div>
+      <section class="main__board-container">
+        <div class="board-container board-container__square-1"></div>
+        <div class="board-container board-container__square-2"></div>
+        <div class="board-container board-container__square-3"></div>
+        <div class="board-container board-container__square-4"></div>
+        <div class="board-container board-container__square-5"></div>
+        <div class="board-container board-container__square-6"></div>
+        <div class="board-container board-container__square-7"></div>
+        <div class="board-container board-container__square-8"></div>
+        <div class="board-container board-container__square-9"></div>
+      </section>
+    </main>
+    <script src="main.js" defer></script>
+  </body>
+</html>

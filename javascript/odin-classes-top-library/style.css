@@ -1,0 +1,422 @@
+@font-face {
+  font-family: "Jost";
+  src:
+    url("/fonts/Jost-Regular.woff2") format("woff2"),
+    url("/fonts/Jost-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tenor Sans";
+  src:
+    url("/fonts/TenorSans.woff2") format("woff2"),
+    url("/fonts/TenorSans.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  font-family: "Tenor Sans", sans-serif;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+:root {
+  --secondary: #c69b3c;
+  --text-display: oklch(98.5% 0 0);
+  --text-display-dark: #0a0a0a;
+  --text-glow: 0 0 5px rgba(255, 255, 255, 0.5);
+  --surface: oklch(98.4% 0.003 247.858);
+  --shadow-surface: 2px 13px 22px 0px #00000033;
+  --surface-variant: oklch(98.4% 0.003 247.858);
+}
+
+body {
+  background-color: oklch(92.9% 0.013 255.508);
+  margin: 0;
+}
+
+/* Header section */
+.header {
+  background-color: var(--surface-variant);
+  box-shadow: 0px 7px 22px 0px #00000033;
+  color: var(--text-display);
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  padding: 1rem 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100rem;
+  max-width: 1600px;
+}
+
+.title {
+  font-size: 5rem;
+  color: var(--text-display-dark);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto;
+  gap: 1.5rem;
+  min-height: 100dvh;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.image {
+  grid-row: 1;
+  align-self: start;
+  margin-top: 2rem;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  margin: 0;
+  box-shadow: var(--shadow-surface);
+}
+
+.nav__add-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid var(--secondary);
+  border-radius: 0.5rem;
+  background: var(--secondary);
+  color: var(--text-display);
+  box-shadow: var(--shadow-surface);
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: "Jost", sans-serif;
+  padding: 0.5rem 1rem;
+}
+
+/* Dialog contains add book form */
+dialog {
+  display: none;
+}
+
+/* Using dialog[open] to leverage native dialog
+behavior & accessibility. Note - not strictly BEM compliant */
+.dialog[open] {
+  display: flex;
+  justify-content: center;
+  border-radius: 1rem;
+  border: none;
+  background-color: var(--surface);
+}
+
+.dialog__form {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: repeat(6, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.dialog__close-btn {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  height: 2.5rem;
+  width: 2.5rem;
+  border: none;
+  justify-self: end;
+  align-self: start;
+  margin-bottom: 1.5rem;
+  margin-top: 0;
+  background: var(--surface);
+  color: var(--secondary);
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+label {
+  font-weight: 700;
+  font-family: "Jost";
+  letter-spacing: 0.1em;
+}
+
+input {
+  padding: 1rem;
+  border: none;
+}
+
+.dialog__label-title {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+}
+
+.dialog__input-author,
+.dialog__input-title {
+  border-radius: 1rem;
+}
+
+.dialog__input-title {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+}
+
+.dialog__label-author {
+  grid-row: 3 / 4;
+  grid-column: 1 / 2;
+}
+
+.dialog__input-author {
+  grid-row: 3 / 4;
+  grid-column: 2 / 3;
+}
+
+.dialog__label-pages {
+  grid-row: 4 / 5;
+  grid-column: 1 / 2;
+}
+
+.dialog__input-pages {
+  grid-row: 4 / 5;
+  grid-column: 2 / 3;
+  padding: 1rem;
+  height: 1rem;
+  border-radius: 1rem;
+}
+
+.dialog__toggle-label {
+  grid-row: 5 / 6;
+  grid-column: 1 / 2;
+}
+
+.dialog__toggle-switch {
+  grid-row: 5 / 6;
+  grid-column: 2 / 3;
+  justify-self: start;
+}
+
+/* Toggle switch created by styling checkbox */
+/* Form rounded corner 'box' around the 'toggle switch' */
+.dialog__toggle {
+  position: relative;
+  display: inline-block;
+  width: 3.125rem;
+  height: 1.625rem;
+  background-color: oklch(55.4% 0.046 257.417);
+  border-radius: 0.9375rem;
+  border: none;
+}
+
+/* Button to toggle */
+.dialog__toggle:after {
+  content: "";
+  position: absolute;
+  width: 1.5625rem;
+  height: 1.5625rem;
+  border-radius: 50%;
+  background-color: var(--text-display);
+  top: 0.03125rem;
+  left: 0.03125rem;
+  transition: all 0.5s;
+}
+
+/* Checkbox checked: toggle switch slid over effect */
+.dialog__checkbox:checked + .dialog__toggle::after {
+  left: 1.53125rem;
+}
+
+/* Colors toggle switch 'box' after slid over */
+.dialog__checkbox:checked + .dialog__toggle {
+  background-color: oklch(59.6% 0.145 163.225);
+}
+
+/* Hide default checkbox display */
+.dialog__checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  z-index: -1;
+}
+
+.dialog__submit-btn {
+  grid-row: 6 / 7;
+  grid-column: 1 / -1;
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--secondary);
+  background-color: var(--secondary);
+  box-shadow: var(--shadow-surface);
+  color: var(--text-display);
+  font-family: "Jost", sans-serif;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Container displays the book cards */
+.container {
+  grid-column: 2;
+  justify-self: center;
+  align-self: start;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: var(--text-display-dark);
+  width: 95%;
+  height: fit-content;
+  border-radius: 0.5rem;
+  border: 1px solid var(--secondary);
+  padding: 1rem;
+  margin: 2rem 2rem;
+}
+
+/* Individual cards containing each book */
+.card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  width: fit-content;
+  min-width: 15rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 1rem auto;
+  background-color: var(--surface);
+  box-shadow: var(--shadow-surface);
+  transition: 0.3s;
+}
+
+.card__label {
+  font-weight: 700;
+  font-family: "Jost";
+  letter-spacing: 0.1em;
+}
+
+/* Delete button for each book card */
+.card__delete {
+  grid-column: span 2;
+  justify-self: end;
+  align-self: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.6rem;
+  aspect-ratio: 1 / 1;
+  width: 2.5rem;
+  box-shadow: var(--shadow-surface);
+  color: var(--secondary);
+  font-weight: 800;
+  border: 1px solid var(--secondary);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.card__delete i {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Footer section */
+.footer {
+  grid-row: 3;
+  grid-column: 1 / 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  background-color: var(--surface-variant);
+  box-shadow: 0px -2px 22px 0px #00000033;
+}
+
+.footer__credit,
+.footer__copyright {
+  font-size: 1rem;
+  color: var(--text-display-dark);
+  text-align: center;
+}
+
+.footer__credit a {
+  color: var(--text-display-dark);
+  text-decoration: underline;
+}
+
+/* Stack elements vertically */
+@media (max-width: 840px) {
+  main {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "navbar"
+      "main"
+      "footer";
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    position: relative;
+    justify-self: center;
+    width: 100%;
+    max-width: 90%;
+    height: auto;
+    padding: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+  }
+
+  .header__img {
+    height: auto;
+    object-fit: contain;
+  }
+
+  .nav,
+  .container,
+  .footer {
+    width: 100%;
+    margin: 0;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .container {
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    margin-left: 0;
+  }
+}
