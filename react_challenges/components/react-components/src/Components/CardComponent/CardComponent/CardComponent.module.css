@@ -1,0 +1,43 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardSection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  margin: 1rem auto;
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 0.625rem;
+  padding-top: 1rem;
+}
+
+.cardImageWrapper {
+  width: 20rem;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: 1px solid white;
+  border-radius: 0.625rem;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.card p {
+  text-align: center;
+  text-wrap: balance;
+}
