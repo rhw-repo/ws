@@ -1,0 +1,143 @@
+:root {
+  --color-text-on-dark: #fafafa;
+  --color-text-default: black;
+  --bg-navbar-footer: #383f4d;
+}
+
+* {
+  box-sizing: border-box;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+/* Main */
+.grid-container {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  margin: 0.5rem 0;
+  gap: 4px;
+}
+
+/* Header */
+.header {
+  grid-row: 1 / 2;
+  grid-column: 1 / span 2;
+  display: grid;
+  justify-content: space-between;
+  align-content: center;
+  width: 100%;
+  max-width: 100%;
+  color: var(--color-text-on-dark);
+  background-color: var(--bg-navbar-footer);
+  font-weight: 600;
+  padding: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+ul {
+  grid-template-areas: links;
+  grid-column-start: 3;
+  grid-column-end: 6;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-content: center;
+  list-style-type: none;
+  gap: 4rem;
+}
+
+/* Aside */
+aside {
+  grid-column: 1;
+  grid-row: 2 / 5;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
+  background-color: #c40108;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  color: var(--color-text-default);
+}
+
+.aside__item {
+  height: 80%;
+  background-color: var(--color-text-on-dark);
+  margin: 1rem;
+  text-align: center;
+}
+
+.aside__item:first-of-type {
+  border-radius: 0.5rem;
+}
+
+/* Navbar */
+nav {
+  grid-column: 2;
+  grid-row: 2;
+  display: grid;
+  place-items: center;
+  background-color: #c40108;
+  color: var(--color-text-on-dark);
+  height: fit-content;
+}
+
+nav ul {
+  padding: 0 auto;
+}
+
+.nav__item {
+  text-transform: uppercase;
+  padding: 0;
+}
+
+article {
+  grid-column: 2;
+  grid-row: 3 / span 2;
+  display: grid;
+  /* minimum value of 250px and a maximum of 1fr unit */
+  grid-template-columns: repeat(4, minmax(250px, 1fr));
+  gap: 15px;
+  width: 100%;
+  background-color: #bccbde;
+  padding: 15px;
+}
+
+.article__card {
+  background-color: var(--color-text-on-dark);
+  text-align: center;
+  padding: 0 1rem 1rem;
+  height: 200px;
+}
+
+.article__card p {
+  text-align: start;
+  font-size: 0.875rem;
+}
+
+/* Footer */
+.footer {
+  grid-row: 5;
+  grid-column: 1 / span 2;
+  background-color: var(--bg-navbar-footer);
+  color: var(--color-text-on-dark);
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.footer span {
+  font-size: 0.875rem;
+  font-weight: 300;
+}
