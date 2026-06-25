@@ -3,16 +3,13 @@ lockfileVersion: '9.0'
 settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
-  blockExoticSubdeps: true
-  minimumReleaseAge: 2880
-  trustPolicy: no-downgrade
 
 importers:
 
   .:
     dependencies:
       dompurify:
-        specifier: ^3.3.3
+        specifier: ^3.4.11
         version: 3.4.11
     devDependencies:
       vite:
