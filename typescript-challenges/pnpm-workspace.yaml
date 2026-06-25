@@ -1,0 +1,23 @@
+packages:
+  - 'typescript_austin_davis'
+
+# Supply chain security settings
+# See: https://pnpm.io/security
+
+# Only allow postinstall scripts for packages that genuinely need them.
+# esbuild and rollup download platform-specific binaries via postinstall.
+allowBuilds:
+  - esbuild
+  - '@esbuild/*'
+  - rollup
+  - '@rollup/*'
+
+# Block transitive deps from using git repos or direct tarball URLs.
+blockExoticSubdeps: true
+
+# Don't install package versions published less than 1 day ago.
+# Malware is usually detected within hours; this closes the exposure window.
+minimumReleaseAge: 1440
+
+# Prevent installation if a package's trust level has decreased vs prior releases.
+trustPolicy: no-downgrade
