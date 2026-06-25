@@ -7,10 +7,11 @@ packages:
 # Only allow postinstall scripts for packages that genuinely need them.
 # esbuild and rollup download platform-specific binaries via postinstall.
 allowBuilds:
-  - esbuild
-  - '@esbuild/*'
-  - rollup
-  - '@rollup/*'
+  '0': esbuild
+  '1': '@esbuild/*'
+  '2': rollup
+  '3': '@rollup/*'
+  esbuild: set this to true or false
 
 # Block transitive deps from using git repos or direct tarball URLs.
 blockExoticSubdeps: true
