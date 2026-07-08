@@ -13,23 +13,74 @@
     <main>
       <section class="page-content">
         <article class="page-content__subsection-container">
-          <div class="subsection__title">Name Export</div>
-          <div class="subsection__content">Name Import</div>
+          <div class="subsection__title-export">Name Export</div>
+          <div class="subsection__title-import">Name Import</div>
         </article>
 
         <article class="page-content__subsection-container">
-          <div class="subsection__title">Name Export</div>
-          <div class="subsection__content">Name Import</div>
+          <div class="subsection__code-block">
+            <span class="code-block__export">export</span> const name = 'value'
+          </div>
+          <div class="subsection__code-block">
+            <span class="code-block__import">import</span>
+            { name } from '...'
+          </div>
         </article>
 
         <article class="page-content__subsection-container">
-          <div class="subsection__title">Name Export</div>
-          <div class="subsection__content">Name Import</div>
+          <div class="subsection__title-export">Default Export</div>
+          <div class="subsection__title-import">Default Import</div>
         </article>
 
         <article class="page-content__subsection-container">
-          <div class="subsection__title">Name Export</div>
-          <div class="subsection__content">Name Import</div>
+          <div class="subsection__code-block">
+            <span class="code-block__export">export</span> default 'value'
+          </div>
+          <div class="subsection__code-block">
+            <span class="code-block__import">import</span>
+            anyName from '...'
+          </div>
+        </article>
+
+        <article class="page-content__subsection-container">
+          <div class="subsection__title-export">Rename Export</div>
+          <div class="subsection__title-import">Name Import</div>
+        </article>
+
+        <article class="page-content__subsection-container">
+          <div class="subsection__code-block">
+            <span class="code-block__export">export</span> { name as newName }
+          </div>
+          <div class="subsection__code-block">
+            <span class="code-block__import">import</span>
+            { newName } from '...'
+          </div>
+        </article>
+
+        <article class="page-content__subsection-container">
+          <div class="subsection__title-export">
+            Export List + Rename Export
+          </div>
+          <div class="subsection__title-import">Import List + Rename</div>
+        </article>
+
+        <article class="page-content__subsection-container">
+          <div class="subsection__code-block">
+            <span class="code-block__export-object">export</span>
+            { name1,
+            <br />
+            name2 as newName2}
+            <br />
+            from '...'
+          </div>
+          <div class="subsection__code-block">
+            <span class="code-block__import-object">import</span>
+            { name1 as newName1,
+            <br />
+            newName2}
+            <br />
+            from '...'
+          </div>
         </article>
       </section>
     </main>

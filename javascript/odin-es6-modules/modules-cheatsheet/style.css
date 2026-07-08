@@ -1,3 +1,7 @@
+:root {
+  --text-light: oklch(98.5% 0 0);
+}
+
 html {
   box-sizing: border-box;
 }
@@ -15,7 +19,8 @@ header {
   justify-content: center;
   align-items: center;
   background-color: oklch(70.4% 0.14 182.503);
-  color: oklch(98.5% 0 0);
+  color: var(--text-light);
+  margin-bottom: 2rem;
 }
 
 .page-content {
@@ -33,4 +38,34 @@ header {
   align-items: center;
   width: 1200px;
   margin: 0 auto;
+}
+
+.subsection__title-export,
+.code-block__export {
+  color: oklch(70.2% 0.183 293.541);
+  font-weight: 900;
+}
+
+.subsection__title-import,
+.code-block__import {
+  color: oklch(51.4% 0.222 16.935);
+  font-weight: 900;
+}
+
+.subsection__title-arrow {
+  width: 4rem;
+  height: 0.3rem;
+  background-color: oklch(70.4% 0.14 182.503);
+  color: oklch(70.4% 0.14 182.503);
+}
+
+.subsection__code-block {
+  width: 40%;
+  background-color: oklch(14.1% 0.005 285.823);
+  color: var(--text-light);
+  padding: 2rem;
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  margin: 0.75rem 0 4rem;
 }
