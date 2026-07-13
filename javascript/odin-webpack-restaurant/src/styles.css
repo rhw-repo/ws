@@ -1,0 +1,12 @@
+body {
+  background-color: oklch(12.9% 0.042 264.695);
+}
+
+header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 4rem;
+  height: 8rem;
+  background-color: oklch(44.4% 0.177 26.899);
+}
