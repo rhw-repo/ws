@@ -1,10 +1,19 @@
-import { resolve, dirname } from "node:path";
-import { fileURLToPath } from "node:url";
+const path = require("node:path");
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-export const entry = "./src/index.js";
-export const output = {
-  filename: "awesome.js",
-  path: resolve(__dirname, "dist"),
+module.exports = {
+  mode: "development",
+  entry: "./src/index.js",
+  output: {
+    filename: "main.js",
+    path: path.resolve(__dirname, "dist"),
+  },
+  module: {
+    //Reg ex checks for specific file type to match it to its loader
+    rules: [
+      {
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
+    ],
+  },
 };
