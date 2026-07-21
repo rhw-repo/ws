@@ -4,15 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Restaurant</title>
+    <style>
+      body {
+        background-image: url("/images/home-hero.webp");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+    </style>
   </head>
   <body>
-    <header>
-      <nav>
-        <button>Home</button>
-        <button>Menu</button>
-        <button>About</button>
+    <header class="header">
+      <nav class="nav">
+        <button type="button" class="nav__button">Home</button>
+        <button type="button" class="nav__button">Menu</button>
+        <button type="button" class="nav__button">About</button>
       </nav>
     </header>
-    <div id="content"></div>
+    <div id="content">
+      <h1 class="h1_overlay">Sabores</h1>
+      <div class="subheadings">
+        <h2 class="h2_overlay">Mediterranian cuisine</h2>
+        <h2 class="h3_overlay">Vegetarian & Vegan</h2>
+      </div>
+    </div>
   </body>
 </html>

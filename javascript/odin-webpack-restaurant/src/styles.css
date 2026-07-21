@@ -1,12 +1,83 @@
-body {
-  background-color: oklch(12.9% 0.042 264.695);
+* {
+  box-sizing: border-box;
 }
 
-header {
+:root {
+  --primary-text: oklch(28.2% 0.091 267.935);
+}
+
+body {
+  background-color: oklch(12.9% 0.042 264.695);
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  height: 8rem;
+  background-color: oklch(74.6% 0.16 232.661);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav {
+  max-width: 1024px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   gap: 4rem;
-  height: 8rem;
-  background-color: oklch(44.4% 0.177 26.899);
+}
+
+.nav__button {
+  background-color: var(--primary-text);
+  border-radius: 1rem;
+  border-color: oklch(97.7% 0.013 236.62);
+  padding: 0.75rem 2rem;
+  color: oklch(97.7% 0.013 236.62);
+  font-size: 1.5rem;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#content {
+  position: relative;
+}
+
+.h1_overlay {
+  position: absolute;
+  margin-top: 0.5rem;
+  left: 300px;
+  font-family: "Times New Roman", Times, serif;
+  color: var(--primary-text);
+  font-size: 18rem;
+  background-color: oklch(97.7% 0.013 236.62 / 0.2);
+  border-radius: 0.5rem;
+}
+
+.subheadings {
+  position: absolute;
+  top: 700px;
+  right: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  gap: 0;
+}
+
+.h2_overlay {
+  font-size: 9rem;
+  background-color: oklch(97.7% 0.013 236.62 / 0.2);
+  color: var(--primary-text);
+  border-radius: 0.5rem;
+  margin: 0;
+}
+
+.h3_overlay {
+  font-size: 7rem;
+  background-color: oklch(97.7% 0.013 236.62 / 0.2);
+  color: oklch(37.8% 0.077 168.94);
+  border-radius: 0.5rem;
+  margin: 0;
 }
