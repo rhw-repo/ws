@@ -3,6 +3,17 @@
     "features": {
         "ghcr.io/devcontainers/features/common-utils:2": {
             "configureZshAsDefaultShell": true
+        },
+        "ghcr.io/devcontainers/features/docker-in-docker:4": {
+            "moby": false
+        },
+        "ghcr.io/stu-bell/devcontainer-features/claude-code:0": {},
+        "ghcr.io/w3cj/devcontainer-features/firewall:latest": {
+            "githubIps": false,
+            "claudeCode": true
         }
-    }
+    },
+    "forwardPorts": [
+        5173
+    ]
 }
