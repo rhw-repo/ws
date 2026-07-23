@@ -9,7 +9,7 @@
         },
         "ghcr.io/stu-bell/devcontainer-features/claude-code:0": {},
         "ghcr.io/w3cj/devcontainer-features/firewall:latest": {
-            "githubIps": false,
+            "githubIps": true,
             "claudeCode": true
         }
     },
