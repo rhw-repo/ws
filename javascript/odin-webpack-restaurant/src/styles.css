@@ -13,8 +13,7 @@ body {
 }
 
 .header {
-  height: 8rem;
-  background-color: oklch(74.6% 0.16 232.661);
+  background-color: oklch(74.6% 0.16 232.661/0.8);
   width: 100%;
   display: flex;
   align-items: center;
@@ -28,37 +27,50 @@ body {
   justify-content: space-evenly;
   align-items: center;
   gap: 4rem;
+  padding: 1rem;
 }
 
 .nav__button {
-  background-color: var(--primary-text);
-  border-radius: 1rem;
-  border-color: oklch(97.7% 0.013 236.62);
+  background-color: transparent;
+  border-color: transparent;
   padding: 0.75rem 2rem;
   color: oklch(97.7% 0.013 236.62);
   font-size: 1.5rem;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 #content {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90dvh;
+  height: 90vh;
 }
 
-.h1_overlay {
-  position: absolute;
-  margin-top: 0.5rem;
-  left: 300px;
-  font-family: "Times New Roman", Times, serif;
-  color: var(--primary-text);
-  font-size: 18rem;
-  background-color: oklch(97.7% 0.013 236.62 / 0.2);
-  border-radius: 0.5rem;
+.circle-title {
+  /* Shape and background */
+  background-color: oklch(60.9% 0.126 221.723/0.8);
+  border-radius: 50%;
+  border: 1px solid oklch(98.5% 0 none);
+
+  /* Text and spacing */
+  padding: 4rem;
+  font-size: 8rem;
+  color: oklch(98.5% 0 none);
+  font-family: "Domine", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+
+  /* Optional: Prevents text from breaking layout if it gets too long */
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .subheadings {
   position: absolute;
-  top: 700px;
-  right: 500px;
+  top: 800px;
+  right: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
