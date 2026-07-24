@@ -1,5 +1,8 @@
 /* Demonstration of default props pattern */
 
+// Default value only used when prop missing or pass undefined
+// If pass null or 0, default value will NOT be used!
+
 interface GreetingsProps {
   name?: string;
   message?: string;
