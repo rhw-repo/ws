@@ -1,10 +1,18 @@
-const Product = (props: { title: string; price: number; inStock: boolean; categories: string[] }) => {
+type ProductProps = {
+    title: string; 
+    price: number; 
+    inStock: boolean; 
+    categories: string[]
+}
+
+
+const Product = ({ title, price, inStock, categories}: ProductProps) => {
     return (
         <div>
-        <h3>{props.title}</h3>
-        <p>Price: ${props.price}</p>
-        <p>In stock: {props.inStock? "Yes" : "No"}</p>
-        <p>Categories: {props.categories.join(", ")}</p>
+        <h3>{title}</h3>
+        <p>Price: ${price}</p>
+        <p>In stock: {inStock? "Yes" : "No"}</p>
+        <p>Categories: {categories.join(", ")}</p>
         </div>
     )
 }

@@ -1,8 +1,11 @@
 import './App.css';
 
-const Button = () => {
+interface ButtonProps {
+    text: string;
+}
+const Button = ( { text }: ButtonProps) => {
     return (
-        <button>Click Me</button>
+        <button>{text}</button>
     )
 }
 

@@ -1,9 +1,13 @@
 import './App.css';
 
-const Welcome = (props: { name: string; alias?: string }) => {
-    console.log(props);
+interface WelcomeProps {
+    name: string; 
+    alias?: string
+}
+
+const Welcome = ( {name, alias}: WelcomeProps ) => {
     return (
-        <h2>Welcome, {props.name} a.k.a {props.alias!}</h2>
+        <h2>Welcome, {name} a.k.a {alias}!</h2>
     )
 }
 
