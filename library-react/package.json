@@ -1,0 +1,5 @@
+{
+  "name": "library-react",
+  "private": true,
+  "packageManager": "pnpm@11.24.0"
+}

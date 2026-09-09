@@ -1,0 +1,50 @@
+import express from "express";
+import mongoose from "mongoose";
+import cors from "cors";
+import session from "express-session";
+import MongoStore from "connect-mongo";
+import "dotenv/config";
+import bookRouter from "./routes/books.js";
+import authRouter from "./routes/auth.js";
+import helmet from "helmet";
+
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log("Connected to MongoDB"))
+  .catch((err) => console.error("MongoDB connection error:", err));
+
+const app = express();
+const port = process.env.PORT;
+
+const corsOptions = {
+  origin: process.env.CLIENT_URL,
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true,
+};
+
+app.use(helmet());
+app.use(cors(corsOptions));
+
+app.use(express.json());
+
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
+    cookie: {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+      maxAge: 1000 * 60 * 60 * 24,
+    },
+  }),
+);
+
+app.use("/auth", authRouter);
+app.use("/books", bookRouter);
+
+app.listen(port, () => {
+  console.log(`Test app listening on port ${port}`);
+});

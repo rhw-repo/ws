@@ -1,0 +1,15 @@
+packages:
+  - "client"
+  - "server"
+
+minimumReleaseAge: 2880
+trustPolicy: no-downgrade
+blockExoticSubdeps: true
+
+overrides:
+  semver: ">=7.7.3"
+
+allowBuilds:
+  bcrypt: true
+  "@swc/core": true
+  esbuild: true

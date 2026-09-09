@@ -1,0 +1,11 @@
+# client/pnpm-workspace.yaml
+packages:
+  - "."
+
+minimumReleaseAge: 2880
+trustPolicy: no-downgrade
+blockExoticSubdeps: true
+
+allowBuilds:
+  "@swc/core": true
+  esbuild: true
