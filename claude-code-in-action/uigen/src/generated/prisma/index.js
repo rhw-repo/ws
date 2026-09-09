@@ -135,7 +135,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/workspaces/ws/claude-code-in-action/uigen/src/generated/prisma",
+      "value": "/home/rhw/projects/ws/claude-code-in-action/uigen/src/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -149,7 +149,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/workspaces/ws/claude-code-in-action/uigen/prisma/schema.prisma",
+    "sourceFilePath": "/home/rhw/projects/ws/claude-code-in-action/uigen/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
