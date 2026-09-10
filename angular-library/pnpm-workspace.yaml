@@ -1,0 +1,15 @@
+minimumReleaseAge: 1440
+blockExoticSubdeps: true
+trustPolicy: no-downgrade
+
+overrides:
+  'semver': '>=7.7.3'
+  'sass': '^1.104.0'
+  'chokidar': '5.0.0'
+  'esbuild': '>=0.28.1'
+
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: true
+  lmdb: true
+  msgpackr-extract: true
