@@ -3,6 +3,7 @@
 import { Component } from '@angular/core';
 
 @Component({
+  // Name of hmtl tag that allows us to reuse component
   selector: 'app-home',
   imports: [],
   templateUrl: './home.html',
