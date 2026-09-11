@@ -1,6 +1,6 @@
 // https://angular.dev/style-guide#introduction
 
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   // Name of hmtl tag that allows us to reuse component
@@ -19,5 +19,17 @@ export class Home {
   protected onClick(): void {
     console.log('Button clicked');
     this.isDisabled = !this.isDisabled;
+  }
+
+  protected count = signal(0);
+
+  increaseCounter(): void {
+    // count = count +1;
+    this.count.update((value) => value + 1);
+  }
+
+  decreaseCounter(): void {
+    // count = count -1;
+    this.count.update((value) => value - 1);
   }
 }
