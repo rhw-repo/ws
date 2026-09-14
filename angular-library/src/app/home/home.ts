@@ -1,6 +1,6 @@
 // https://angular.dev/style-guide#introduction
 // signal is a function
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, effect, signal } from '@angular/core';
 
 @Component({
   // Name of hmtl tag that allows us to reuse component
@@ -23,7 +23,12 @@ export class Home {
 
   protected count = signal(0);
 
+  // Computed signal represents derived state returns a value, must be pure no side effects
   protected doubleCount = computed(() => this.count() * 2);
+  //Effects react to state changes, perform side effects and do NOT return values
+  private readonly countLog = effect(() => {
+    console.log('Count changed:', this.count());
+  });
 
   protected increaseCounter(): void {
     // count = count +1;
