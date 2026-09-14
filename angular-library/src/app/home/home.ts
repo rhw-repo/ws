@@ -1,6 +1,6 @@
 // https://angular.dev/style-guide#introduction
-
-import { Component, signal } from '@angular/core';
+// signal is a function
+import { Component, computed, signal } from '@angular/core';
 
 @Component({
   // Name of hmtl tag that allows us to reuse component
@@ -23,17 +23,19 @@ export class Home {
 
   protected count = signal(0);
 
-  increaseCounter(): void {
+  protected doubleCount = computed(() => this.count() * 2);
+
+  protected increaseCounter(): void {
     // count = count +1;
     this.count.update((value) => value + 1);
   }
 
-  decreaseCounter(): void {
+  protected decreaseCounter(): void {
     // count = count -1;
     this.count.update((value) => value - 1);
   }
 
-  resetCounter(): void {
+  protected resetCounter(): void {
     this.count.set(0);
   }
 }

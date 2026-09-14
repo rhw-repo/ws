@@ -3,7 +3,9 @@
 <p>{{ subtitleParagraph }}</p>
 
 <button [disabled]="isDisabled" (click)="onClick()">Toggle</button>
-<h1>{{ count() }}</h1>
+
+<h1>Count:{{ count() }}</h1>
+<h1>Double: {{ count() }}</h1>
 <button (click)="increaseCounter()">+</button>
 <button (click)="decreaseCounter()">-</button>
 <button (click)="resetCounter()">Reset</button>
