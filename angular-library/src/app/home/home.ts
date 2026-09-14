@@ -32,4 +32,8 @@ export class Home {
     // count = count -1;
     this.count.update((value) => value - 1);
   }
+
+  resetCounter(): void {
+    this.count.set(0);
+  }
 }
