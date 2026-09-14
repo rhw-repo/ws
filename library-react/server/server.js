@@ -11,10 +11,16 @@ import helmet from "helmet";
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("Connected to MongoDB"))
-  .catch((err) => console.error("MongoDB connection error:", err));
+  .catch((err) => {
+    console.error("MongoDB connection error:");
+    console.dir(err, { depth: null });
+  });
 
 const app = express();
 const port = process.env.PORT;
+
+// Uncomment for prod
+// app.set("trust proxy", -1);
 
 const corsOptions = {
   origin: process.env.CLIENT_URL,
@@ -38,6 +44,9 @@ app.use(
       secure: process.env.NODE_ENV === "production",
       sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
       maxAge: 1000 * 60 * 60 * 24,
+      // Partitioned (CHIPS) is only valid alongside Secure; Chrome silently
+      // drops the cookie otherwise, so keep it off over plain http in dev.
+      partitioned: process.env.NODE_ENV === "production",
     },
   }),
 );
@@ -46,5 +55,5 @@ app.use("/auth", authRouter);
 app.use("/books", bookRouter);
 
 app.listen(port, () => {
-  console.log(`Test app listening on port ${port}`);
+  console.log(`Test app listening on http://localhost:${port}`);
 });
