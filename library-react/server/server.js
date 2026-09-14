@@ -8,13 +8,13 @@ import bookRouter from "./routes/books.js";
 import authRouter from "./routes/auth.js";
 import helmet from "helmet";
 
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log("Connected to MongoDB"))
-  .catch((err) => {
-    console.error("MongoDB connection error:");
-    console.dir(err, { depth: null });
-  });
+try {
+  await mongoose.connect(process.env.MONGO_URI);
+  console.log("Connected to MongoDB");
+} catch (err) {
+  console.error("MongoDB connection error:");
+  console.dir(err, { depth: null });
+}
 
 const app = express();
 const port = process.env.PORT;
