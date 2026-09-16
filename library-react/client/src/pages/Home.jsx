@@ -4,7 +4,7 @@ import BookList from "../components/BookList.jsx";
 
 export default function Home() {
   return (
-    <main class="mx-auto max-w-[1280px] px-4 py-8">
+    <main className="mx-auto max-w-[1280px] px-4 py-8">
       <img
         src={heroImage}
         alt="A cosy reading corner..."
