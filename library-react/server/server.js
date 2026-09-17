@@ -7,6 +7,8 @@ import "dotenv/config";
 import bookRouter from "./routes/books.js";
 import authRouter from "./routes/auth.js";
 import helmet from "helmet";
+/*import passport from "passport";
+import GoogleOidcStrategy from "passport-google-oidc";*/
 
 try {
   await mongoose.connect(process.env.MONGO_URI);
@@ -50,6 +52,14 @@ app.use(
     },
   }),
 );
+
+/*passport.use(
+  new GoogleOidcStrategy({
+    clientID: process.env['GOOGLE_CLIENT_ID'],
+    clientSecret: process.env['GOOGLE_CLIENT_SECRET'],
+    callbackURL: `https:
+  })
+)*/
 
 app.use("/auth", authRouter);
 app.use("/books", bookRouter);
