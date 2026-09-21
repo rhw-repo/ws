@@ -1,0 +1,10 @@
+minimumReleaseAge: 100808
+blockExoticSubdeps: true
+trustPolicy: no-downgrade
+
+overrides:
+  undici-types: ">=7.29.1"
+  esbuild: ">=0.28.1"
+allowBuilds:
+  "@stripe/cli": true
+  esbuild: true

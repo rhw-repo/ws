@@ -1,0 +1,9 @@
+minimumReleaseAge: 100808
+blockExoticSubdeps: true
+trustPolicy: no-downgrade
+
+overrides:
+  esbuild: ">=0.28.1"
+
+allowBuilds:
+  esbuild: true
