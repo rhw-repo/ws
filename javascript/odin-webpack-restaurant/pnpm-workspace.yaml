@@ -1,0 +1,5 @@
+blockExoticSubdeps: true
+
+minimumReleaseAge: 5700
+
+trustPolicy: no-downgrade
