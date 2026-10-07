@@ -1,9 +1,10 @@
-minimumReleaseAge: 100808
+minimumReleaseAge: 5700
 blockExoticSubdeps: true
 trustPolicy: no-downgrade
 
 overrides:
   esbuild: ">=0.28.1"
+  "source-map-js": ">=1.2.2"
 
 allowBuilds:
   esbuild: true
