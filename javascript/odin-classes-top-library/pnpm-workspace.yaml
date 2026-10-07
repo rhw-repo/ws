@@ -2,8 +2,9 @@ packages:
   - "."
 
 blockExoticSubdeps: true
-minimumReleaseAge: 2880
-
+minimumReleaseAge: 5700
+overrides:
+  "source-map-js": ">=1.2.2"
 allowBuilds:
-  - esbuild
-  - lightningcss
+  "esbuild": true
+  "lightningcss": true
