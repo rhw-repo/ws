@@ -1,5 +1,12 @@
 packages:
   - "."
 
+minimumReleaseAge: 5700
+trustPolicy: no-downgrade
+blockExoticSubdeps: true
+
+overrides:
+  "proxy-addr": ">=2.0.8"
+
 allowBuilds:
-  bcrypt: true
+  "bcrypt": true

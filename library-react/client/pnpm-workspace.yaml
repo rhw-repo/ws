@@ -2,10 +2,13 @@
 packages:
   - "."
 
-minimumReleaseAge: 2880
+minimumReleaseAge: 5700
 trustPolicy: no-downgrade
 blockExoticSubdeps: true
 
+overrides:
+  "proxy-addr": ">=2.0.8"
+  "semver": ">=7.8.5"
 allowBuilds:
   "@swc/core": true
   esbuild: true
