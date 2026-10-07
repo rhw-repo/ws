@@ -1,9 +1,6 @@
-allowBuilds:
-  - esbuild
-  - sqlite3
-
 blockExoticSubdeps: true
-
-minimumReleaseAge: 1440
-
+minimumReleaseAge: 5770
 trustPolicy: no-downgrade
+allowBuilds:
+  "esbuild": true
+  "sqlite3": true
