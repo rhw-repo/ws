@@ -1,8 +1,7 @@
-allowBuilds:
-  '@parcel/watcher': true
-
 blockExoticSubdeps: true
-
-minimumReleaseAge: 1440
-
+minimumReleaseAge: 5700
 trustPolicy: no-downgrade
+overrides:
+  "undici": ">=6.28.1"
+allowBuilds:
+  "@parcel/watcher": true
