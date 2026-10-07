@@ -1,0 +1,13 @@
+blockExoticSubdeps: true
+minimumReleaseAge: 5700
+
+# Prevent installation if a package's trust level has decreased vs prior releases.
+trustPolicy: no-downgrade
+
+overrides:
+  "brace-expansion": ">=5.0.11"
+  "semver": ">=7.8.5"
+  "vite": ">=7.3.5"
+allowBuilds:
+  "@swc/core": true
+  "esbuild": true
