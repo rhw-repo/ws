@@ -3,5 +3,6 @@ minimumReleaseAge: 5700
 trustPolicy: no-downgrade
 overrides:
   "undici": ">=6.28.1"
+  "fast-uri": ">=3.1.9"
 allowBuilds:
   "@parcel/watcher": true
