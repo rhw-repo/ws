@@ -2,8 +2,9 @@ blockExoticSubdeps: true
 minimumReleaseAge: 5700
 trustPolicy: no-downgrade
 overrides:
-  "@babel/plugin-transform-modules-systemjs": ">=7.29.4"
+  "@babel/plugin-transform-modules-systemjs": "^7.29.4"
   "semver": ">=7.8.5"
+  "minimatch": ">=11.0.1"
 allowBuilds:
   "@parcel/watcher": true
   unrs-resolver: true
