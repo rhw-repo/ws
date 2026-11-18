@@ -1,0 +1,6 @@
+blockExoticSubdeps: true
+minimumReleaseAge: 5700
+trustPolicy: no-downgrade
+
+overrides:
+  "minimatch": ">=11.0.1"
