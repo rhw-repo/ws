@@ -27,7 +27,7 @@ importers:
         specifier: ^17.2.0
         version: 17.4.2
       hono:
-        specifier: ^4.13.16
+        specifier: '>=4.13.16'
         version: 4.13.16
       stripe:
         specifier: ^18.3.0
