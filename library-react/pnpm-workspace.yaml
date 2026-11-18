@@ -9,6 +9,7 @@ blockExoticSubdeps: true
 overrides:
   semver: ">=7.7.3"
   "proxy-addr": ">=2.0.8"
+  "minimatch": ">=11.0.1"
 
 allowBuilds:
   bcrypt: true
