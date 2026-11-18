@@ -3,3 +3,8 @@ blockExoticSubdeps: true
 minimumReleaseAge: 5700
 
 trustPolicy: no-downgrade
+
+overrides:
+  "launch-editor": ">=2.14.2"
+  "qs": ">=6.16.1"
+  "fast-uri": ">=3.1.9"
